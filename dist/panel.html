@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <div id="topmenu">
+    <button id="clear">Clear</button>
+    <button id="help">Help</button>
+  </div>
+  <div id="panels">
+    <div id="left">
+      <div id="tableWrapper">
+        <table id="table">
+          <tr class="header">
+            <td>Method</td>
+            <td>Time</td>
+            <td>Size</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div id="right">
+      <div id="params">
+        <div class="header">Params</div>
+        <div id="params_json_viewer"></div>
+      </div>
+      <div id="resultError">
+        <div class="header">Result/Error</div>
+        <div id="resultError_json_viewer"></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="helpPopup" class="hidden">
+    <div id="helpPopupContent">
+      <p><strong>JSON-RPC Viewer 0.0.1</strong></p>
+      <p>This Google Chrome extension helps to view HTTP JSON-RPC requests in a convenient way.</p>
+      <p>Left pane shows <strong>completed http requests</strong> which are JSON-RPC 2.0 requests. Each line begins
+        with a JSON-RPC method name (batch requests are not supported yet). <em>Time</em> shows overall request (including
+        network) time in milliseconds, and <em>Size</em> is a response body size in bytes.</p>
+      <p>Method names are colored. Colors are for: <span style="color: green;">successful</span> and <span style="color: orangered;">failed</span>
+        requests (according to JSON-RPC response). If response is too large to parse, it will appear in <span style="color: purple;">purple</span>.
+      </p>
+      <p>Click list item to see JSON for params and result/error in right panes.</p>
+      <p>Click <em>Clear</em> to clear the list.</p>
+      <p>Feature requests, bug reports and pull requests goes here: <a target="_blank" href="https://github.com/kityan/json-rpc-viewer">https://github.com/kityan/json-rpc-viewer</a></p>
+      <br /><br />
+      <button id="closeHelp">Close help</button>
+    </div>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+
+</html>

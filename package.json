@@ -1,0 +1,29 @@
+{
+  "name": "json-rpc-viewer",
+  "version": "1.0.1",
+  "description": "Convenient way to view JSON-RPC requests",
+  "main": "app.js",
+  "dependencies": {
+    "json-formatter-js": "^2.2.1"
+  },
+  "devDependencies": {
+    "copy-webpack-plugin": "^4.0.1",
+    "rimraf": "^2.5.4",
+    "webpack": "^3.0.0"
+  },
+  "scripts": {
+    "clean": "rimraf dist",
+    "build": "npm run clean && webpack --config webpack.config.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kityan/json-rpc-viewer.git"
+  },
+  "author": "pavel@kityan.ru",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kityan/json-rpc-viewer/issues"
+  },
+  "homepage": "https://github.com/kityan/json-rpc-viewer#readme"
+}
