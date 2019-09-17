@@ -1,6 +1,6 @@
 {
   "name": "JSON-RPC Viewer",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "Convenient way to view JSON-RPC requests",
   "manifest_version": 2,
   "permissions": [

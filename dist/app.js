@@ -142,7 +142,7 @@ chrome.devtools.network.onRequestFinished.addListener(request => {
       const td1 = document.createElement('td')
 
       if (responseJSON) {
-        td1.classList.add(responseJSON && responseJSON.result ? 'ok' : 'error')
+        td1.classList.add(responseJSON && responseJSON.hasOwnProperty && responseJSON.hasOwnProperty('result') ? 'ok' : 'error')
       } else {
         td1.classList.add('reponseNotParsed')
       }
@@ -164,13 +164,28 @@ chrome.devtools.network.onRequestFinished.addListener(request => {
       tr.addEventListener('click', event => {
         Array.from(document.getElementsByTagName('tr')).forEach(el => el.classList.remove('selected'))
         event.currentTarget.classList.add('selected')
-        const formatter1 = new __WEBPACK_IMPORTED_MODULE_0_json_formatter_js___default.a(requestJSON.params, 1, opts)
+        let formatter1
+        if (requestJSON && requestJSON.hasOwnProperty && requestJSON.hasOwnProperty('params')) {
+          formatter1 = new __WEBPACK_IMPORTED_MODULE_0_json_formatter_js___default.a(requestJSON.params, 1, opts)
+        }
         // [?] too large responses are not available
-        const formatter2 = new __WEBPACK_IMPORTED_MODULE_0_json_formatter_js___default.a((responseJSON && (responseJSON.result || responseJSON.error)) || null, 1, opts)
+        let formatter2
+        if (responseJSON && responseJSON.hasOwnProperty) {
+          if (responseJSON.hasOwnProperty('result')) {
+            formatter2 = new __WEBPACK_IMPORTED_MODULE_0_json_formatter_js___default.a(responseJSON.result, 1, opts)
+          }
+          if (responseJSON.hasOwnProperty('error')) {
+            formatter2 = new __WEBPACK_IMPORTED_MODULE_0_json_formatter_js___default.a(responseJSON.error, 1, opts)
+          }
+        }
         divParamsViewer.innerHTML = ''
-        divParamsViewer.appendChild(formatter1.render())
+        if (formatter1) {
+          divParamsViewer.appendChild(formatter1.render())
+        }
         divResultErrorViewer.innerHTML = ''
-        divResultErrorViewer.appendChild(formatter2.render())
+        if (formatter2) {
+          divResultErrorViewer.appendChild(formatter2.render())
+        }
       })
 
       td1.innerHTML = requestJSON.method
