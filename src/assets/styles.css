@@ -53,6 +53,13 @@ body {
   border: 0;
 }
 
+#table td.methodName {
+  padding-left: 10px !important;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  /* background-image: url('./list-items/none.svg'); */
+}
+
 #topmenu {
   height: 25px;
   min-height: 25px;
@@ -191,4 +198,15 @@ div.header {
 
 .hidden {
   visibility: hidden;
+}
+
+
+.methodName.inBatch_mid {
+  background-image: url('./list-items/mid.svg') !important;
+}
+.methodName.inBatch_end {
+  background-image: url('./list-items/end.svg') !important;
+}
+.methodName.inBatch_start {
+  background-image: url('./list-items/start.svg') !important;
 }

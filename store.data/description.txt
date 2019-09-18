@@ -1,4 +1,4 @@
 JSON-RPC Viewer is an extension to help viewing JSON-RPC requests in a more convenient way than Network tab allows.
 You can view a list of requests with method name, params and result/response.
-Method name filtration and JSON-RPC batch requests are not implemented yet.
+Supports JSON-RPC batch requests from version 1.1.1
 Feature requests, bug reports and pull requests are welcome here: https://github.com/kityan/json-rpc-viewer.
