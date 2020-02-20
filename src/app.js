@@ -1,14 +1,20 @@
 import JSONFormatter from 'json-formatter-js'
 
+const body = document.getElementsByTagName('body')
 const left = document.getElementById('left')
 const table = document.getElementById('table')
 const helpPopup = document.getElementById('helpPopup')
 const divParamsViewer = document.getElementById('params_json_viewer')
 const divResultErrorViewer = document.getElementById('resultError_json_viewer')
 const opts = { animateOpen: false, animateClose: false }
+const currentTheme = chrome.devtools.panels.themeName
+
 let trClass = 1
 
-
+// add theme class name
+if (currentTheme && body.length > 0) {
+  body[0].classList.add('theme-' + currentTheme)
+}
 // clear log
 document.getElementById('clear').addEventListener('click', () => {
   divParamsViewer.innerHTML = ''

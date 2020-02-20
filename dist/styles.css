@@ -210,3 +210,51 @@ div.header {
 .methodName.inBatch_start {
   background-image: url('./list-items/start.svg') !important;
 }
+
+.theme-dark .json-formatter-row .json-formatter-key {
+  color: #999999;
+}
+
+.theme-dark .json-formatter-row,
+.theme-dark .json-formatter-row a,
+.theme-dark .json-formatter-row a:hover,
+.theme-dark .json-formatter-row .json-formatter-bracket {
+  color: #c3c3ff;
+}
+
+.theme-dark .json-formatter-row .json-formatter-number {
+  color: #8181ff;
+}
+
+.theme-dark .json-formatter-row .json-formatter-string, .theme-dark .json-formatter-row .json-formatter-stringifiable {
+  color: #00d200;
+}
+
+.theme-dark .error {
+  color: #ff4500;
+}
+
+.theme-dark .even {
+  background: #2b2b2b;
+}
+
+.theme-dark .odd {
+  background: transparent;
+}
+
+.theme-dark .selected {
+  background: #424242 !important;
+}
+
+.theme-dark .header, .theme-dark #topmenu {
+  background-color: #212121;
+  color: white;
+}
+
+.theme-dark .ok {
+  color: lightgreen;
+}
+
+.theme-dark {
+  color: white;
+}
