@@ -255,6 +255,14 @@ div.header {
   color: lightgreen;
 }
 
+.theme-dark #helpPopupContent {
+  background-color: #2f2f2f;
+}
+
+.theme-dark #helpPopupContent a {
+  color: #00a0ff;
+}
+
 .theme-dark {
   color: white;
 }
