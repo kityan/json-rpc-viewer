@@ -101,29 +101,28 @@ button#help {
 
 #left {
   width: 50%;
-  max-width: 50%;
+  min-width: 5%;
   overflow: auto;
 }
 
 #right {
   border-left: 1px solid #999;
-  width: 50%;
-  max-width: 50%;
+  min-width: 5%;
   overflow: auto;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  flex-grow: 1;
 }
 
 #params {
-  height: 25%;
+  min-height: 25px;
+  max-height: 95%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
 #resultError {
-  height: 75%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -136,6 +135,22 @@ button#help {
   padding: 3px;
 }
 
+#left_resizer {
+  width: 5px;
+  cursor: col-resize;
+}
+
+#left_resizer:hover {
+  background-color: #c7c7c7;
+}
+
+#params_resizer {
+  height: 5px;
+  cursor: row-resize;
+}
+#params_resizer:hover {
+  background-color: #c7c7c7;
+}
 
 tr {
   cursor: pointer;
@@ -159,6 +174,7 @@ tr {
   background: #CCC;
   color: #000;
   padding: 3px;
+  user-select: none;
 }
 
 tr.header {
@@ -261,6 +277,10 @@ div.header {
 
 .theme-dark #helpPopupContent a {
   color: #00a0ff;
+}
+
+.theme-dark #left_resizer:hover, .theme-dark #params_resizer:hover {
+  background-color: #999;
 }
 
 .theme-dark {
