@@ -233,7 +233,7 @@ function addListItem(request, requestJSON, responseJSON, inBatch, batchSize) {
     method.classList.add('title');
     url.classList.add('url');
 
-    const origin = request.request.headers.find(({ name }) => name === 'Host');
+    const origin = request.request.headers.find(({ name }) => name === 'origin');
     const host = origin ? origin.value : '';
 
     if (!request.request.url.includes(host)) {
