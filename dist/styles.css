@@ -60,6 +60,15 @@ body {
   /* background-image: url('./list-items/none.svg'); */
 }
 
+#table td.methodName .url {
+  color: #ccc;
+}
+
+#table td.methodName .url.cors:before {
+  content: 'CORS: ';
+  color: red;
+}
+
 #topmenu {
   height: 25px;
   min-height: 25px;

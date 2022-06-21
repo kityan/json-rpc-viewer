@@ -227,8 +227,27 @@ function addListItem(request, requestJSON, responseJSON, inBatch, batchSize) {
     const time = Number.isFinite(request.time) ? Math.round(request.time) : ''
     const size = request.response && request.response.content && request.response.content.size
 
-    td1.innerHTML = requestJSON.method
-    td1.classList.add('methodName')
+    const method = document.createElement('div');
+    const url = document.createElement('div');
+
+    method.classList.add('title');
+    url.classList.add('url');
+
+    const origin = request.request.headers.find(({ name }) => name === 'Host');
+    const host = origin ? origin.value : '';
+
+    if (!request.request.url.includes(host)) {
+      url.classList.add('cors');
+    }
+
+    method.innerText = requestJSON.method;
+    url.innerText = request.request.url;
+
+    td1.appendChild(method);
+    td1.appendChild(url);
+
+    td1.classList.add('methodName');
+
     if (inBatch) {
         td1.classList.add('inBatch_' + inBatch)
         if (inBatch === 'start') {
